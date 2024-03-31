@@ -1,0 +1,10 @@
+<div class="todo-app">
+    <input class="todo-input" type="text" [(ngModel)]="newTodoTitle" (keyup.enter)="onAddTodo(newTodoTitle)" placeholder="Add new todo...">
+    <button class="add-btn" (click)="onAddTodo(newTodoTitle)">Add</button>
+    <ul class="todo-list">
+        <li *ngFor="let todo of todos" class="todo-item">
+            <span [class.completed]="todo.completed" (click)="onToggleTodo(todo.id)">{{ todo.title }}</span>
+            <button class="delete-btn" (click)="onDeleteTodo(todo.id)">Delete</button>
+        </li>
+    </ul>
+</div>
